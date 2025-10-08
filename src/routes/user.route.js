@@ -4,6 +4,7 @@ import { getAllUsers,  createUser, loginUser } from "../controllers/user.control
 const router = Router();
 
 router.get("/", getAllUsers);
+
 router.post("/create",createUser);
 router.post("/login", loginUser);
 export default router;

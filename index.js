@@ -2,7 +2,10 @@ import express from "express";
 import "dotenv/config";
 import conexionBD from "./src/config/DB.js";
 import cors from 'cors'
+
 import userRouter from "./src/routes/user.route.js"
+import employeeRoutes from "./src/routes/employed.route.js"
+
 
 const app = express();
 conexionBD();
@@ -16,6 +19,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados que tu frontend puede enviar
 }));
 app.use("/users", userRouter);
+app.use("/employees", employeeRoutes);
 app.listen(PORT,()=>{
     console.log('servidor en funcionamiento', PORT)
 });
